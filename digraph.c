@@ -3,7 +3,7 @@
 #include "digraph.h"
 
 Digraph initDigraph(int V) {
-    Digraph G = malloc(sizeof(Digraph));
+    Digraph G = malloc(sizeof *G);
     G->V = V;
     G->adj = malloc(V * sizeof(link));
     for (Vertex v = 0; v < V; v++)
@@ -18,7 +18,7 @@ void printDigraph(Digraph G) {
 }
 
 void freeDigraph(Digraph G) {
-    for (Vertex v = 0; v < G->V; v++) {
+  for (Vertex v = 0; v < G->V; v++) {
         link e = G->adj[v];
         while (e != NULL) {
             link aux = e;

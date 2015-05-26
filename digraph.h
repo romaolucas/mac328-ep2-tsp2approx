@@ -7,8 +7,8 @@ typedef struct node *link;
 struct node {
     Vertex u;  //u e v sao as pontas do meu grafo
     Vertex v;
+    float weight;
     link next;
-    link antiparallel;
 };
 
 struct digraph {
